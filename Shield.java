@@ -17,7 +17,7 @@ public class Shield {
         heroes.add(new Hero("Hulk", 49, true));
         heroes.add(new Hero("Doctor Strange", 42, false));
 
-        List<Hero> elders;
+        List<Hero> elders = heroes.stream().filter(hero-> hero.getAge()>59).toList();
         // TODO 1 : filter heroes in order to found heroes older than 59
 
         System.out.println("\nElders:");
@@ -25,7 +25,7 @@ public class Shield {
             System.out.println(elder.getName());
         }
 
-        List<Hero> intolerants;
+        List<Hero> intolerants = heroes.stream().filter(hero-> hero.isGlutenIntolerant()).toList();;
         // TODO 2 : filter heroes in order to found heroes that are gluten intolerants
 
         System.out.println("\nGluten intolerants:");
